@@ -10,4 +10,4 @@
 - `bundle install`
 
 ## develop
-- `gulp watch`
+- `gulp`
