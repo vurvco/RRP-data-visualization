@@ -1,5 +1,5 @@
 ## prereqs
-- ruby, npm, jekyll, bundler
+- ruby, npm, jekyll, bundler, gulp
 
 ## setup
 - `npm install`
