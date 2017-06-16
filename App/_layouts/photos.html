@@ -1,0 +1,29 @@
+---
+layout: angular
+---
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">{{ page.title | escape }}</h1>
+    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
+  </header>
+  {{ content }}
+
+  <section>
+    <div ng-repeat="img in imgs" style="width: {[{ img.width*200/img.height }]}px;flex-grow: {[{ img.width*200/img.height }]}">
+      <i style="padding-bottom:{[{ img.height/img.width*100 }]}%"></i>
+      <img ng-src="https://xieranmaya.github.io/images/cats/{[{ img.url }]}">
+    </div>
+  </section>
+
+  <script type="text/javascript">
+    // ref:https://github.com/xieranmaya/blog/issues/6
+    // source:http://jsbin.com/tisaluy/8/edit?html,css,output
+    function ImageLayout($scope, $http) {
+      $http.get('{{ page.photos_json }}').then(function (success) {
+        console.log("controlelr", success);
+        $scope.imgs = success.data;
+      },function (error){
+        console.log("error getting images!");
+      });
+    }
+    photosApp.controller('ImageLayout', ImageLayout)
+  </script>
