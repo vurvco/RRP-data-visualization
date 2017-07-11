@@ -1,0 +1,28 @@
+.page-link {
+  font-size: 12px;
+  text-transform: uppercase;
+  padding: 3px;
+  color: #424242;
+  &:hover {
+    text-decoration-color: #222;
+  }
+}
+
+.title-highlight {
+  background-color: #222;
+  color: #fff !important;
+  padding: 3px;
+}
+
+.post-header {
+  .post-title {
+    font-size: 26px;
+    font-family: 'Alegreya Sans SC', sans-serif;
+    letter-spacing: 1px;
+    color: #424242;
+  }
+}
+
+.post-content {
+  color: #424242;
+}
