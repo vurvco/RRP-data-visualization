@@ -1,5 +1,4 @@
 # Title: RRP-Data-Visualization - Barplot sketches
-# Author: Mario Ezekiel H. (@m_ezkiel)
 
 library(ggplot2)
 
@@ -99,3 +98,22 @@ barplot(as.matrix(df[27, 3:5]), main = "Black demographic stats, 2014")
 
 # Unset plot matrix
 par(mfrow=c(1,1))
+
+# Reshape data for grouped barplot
+eth <- rep(races, each = 3)
+attrProp <- rep(c("population", "births", "abortions"), times = 3)
+
+df2 <- data.frame(factor(eth), factor(attrProp))
+df2
+
+df
+
+df2$value[1:3] <- df[1, 3:5]
+df2$value[4:6] <- df[10, 3:5]
+df2$value[7:9] <- df[19, 3:5]
+
+df2$value <- unlist(df2$value)
+
+# Grouped
+ggplot(df2, aes(fill=eth, y=value, x=attrProp)) + 
+  geom_bar(position="dodge", stat="identity")
