@@ -84,17 +84,17 @@ df
 par(mfrow=c(3,2))
 
 # White demographic stats
-barplot(as.matrix(df[1, 3:5]), main = "White demographic stats, 2006", col = "white")
-barplot(as.matrix(df[9, 3:5]), main = "White demographic stats, 2014", col = "white")
+barplot(as.matrix(df[1, 3:5]), main = "White demographic stats, 2006", col = "#a4c639")
+barplot(as.matrix(df[9, 3:5]), main = "White demographic stats, 2014", col = "#a4c639")
 
 # Hispanic demographic stats
-barplot(as.matrix(df[10, 3:5]), main = "Hispanic demographic stats, 2006", col = "grey")
-barplot(as.matrix(df[18, 3:5]), main = "Hispanic demographic stats, 2014", col = "grey")
+barplot(as.matrix(df[10, 3:5]), main = "Hispanic demographic stats, 2006", col = "#cd9575")
+barplot(as.matrix(df[18, 3:5]), main = "Hispanic demographic stats, 2014", col = "#cd9575")
 
 # Black demographic stats
 # Population remains stable
-barplot(as.matrix(df[19, 3:5]), main = "Black demographic stats, 2006")
-barplot(as.matrix(df[27, 3:5]), main = "Black demographic stats, 2014")
+barplot(as.matrix(df[19, 3:5]), main = "Black demographic stats, 2006", col = "#5d8aa8")
+barplot(as.matrix(df[27, 3:5]), main = "Black demographic stats, 2014", col = "#5d8aa8")
 
 # Unset plot matrix
 par(mfrow=c(1,1))
